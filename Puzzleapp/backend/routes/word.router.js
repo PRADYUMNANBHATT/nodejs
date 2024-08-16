@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const word = require("../models/word.model");
+const WordController = require("../controller/word.controller");
+router.get("/", WordController.getWord);
+router.get("/:id", WordController.getSingleword);
+router.put("/:id", WordController.updateword);
+router.delete("/:id", WordController.deleteword);
+router.post("/", WordController.createword);
+module.exports = router;
